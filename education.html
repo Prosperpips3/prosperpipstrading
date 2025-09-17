@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProsperPips - Education Hub</title>
+    <meta name="description"
+        content="ProsperPips Education Hub - Learn Forex trading step by step with beginner to advanced courses, risk management strategies, and quizzes." />
+    <meta name="keywords"
+        content="forex education, forex basics, technical analysis, risk management, advanced trading strategies, ProsperPips" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #0c0c0c;
+            color: #e9e0e0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #0a1930;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Hamburger button */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            background: url("https://images.unsplash.com/photo-1611095564985-5a914fc8e4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 6rem 2rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 1rem auto;
+            padding: 0 2rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+
+        /* Course Grid */
+        .courses {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeUp 1s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .card img {
+            width: 70px;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.8rem;
+            color: #0a1930;
+        }
+
+        .card p {
+            color: #444;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffd700;
+            color: #0a1930;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: #f0c000;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a1930;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                background: #0a1930;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                border-radius: 8px;
+                padding: 1rem;
+            }
+
+            nav a {
+                margin: 10px 0;
+                font-size: 1rem;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">ProsperPips</div>
+        <button class="menu-toggle">☰</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="education.html">Education</a>
+            <a href="tools.html">Tools</a>
+            <a href="contact.html">Contact</a>
+            <a href="signals.html">Signals</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Education Hub</h1>
+        <p>Step-by-step courses to help you master Forex trading.</p>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> <span>&gt;</span> Education Hub
+    </div>
+
+    <!-- Courses -->
+    <section class="courses">
+        <!-- Forex Basics -->
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/254/254429.png" alt="Forex Basics" />
+            <h3>📘 Forex Basics</h3>
+            <p>Learn the fundamentals of Forex trading from scratch.</p>
+            <a href="forex_basics.html" class="btn">Start Learning</a>
+        </div>
+
+        <!-- Technical Analysis -->
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2530/2530442.png" alt="Technical Analysis" />
+            <h3>📊 Technical Analysis</h3>
+            <p>Understand candlesticks, indicators, and chart patterns.</p>
+            <a href="technical_analysis.html" class="btn">Explore</a>
+        </div>
+
+        <!-- Risk Management -->
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Risk Management" />
+            <h3>🛡 Risk Management</h3>
+            <p>Protect your capital and trade with discipline.</p>
+            <a href="risk_management.html" class="btn">Learn More</a>
+        </div>
+
+        <!-- Advanced Strategies -->
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/254/254431.png" alt="Advanced Strategies" />
+            <h3>🚀 Advanced Strategies</h3>
+            <p>Smart Money Concepts, Order Blocks, FVG and more.</p>
+            <a href="advanced_strategies.html" class="btn">Start Learning</a>
+        </div>
+
+        <!-- Quiz -->
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Quiz" />
+            <h3>📝 Test Your Knowledge</h3>
+            <p>Challenge yourself with interactive quizzes.</p>
+            <a href="quiz.html" class="btn">Take Quiz</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 ProsperPips. All Rights Reserved. |
+            <a href="#">Telegram</a> |
+            <a href="#">YouTube</a> |
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+
+    <!-- Script for mobile menu -->
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav");
+
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>
